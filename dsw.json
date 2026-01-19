@@ -1,0 +1,50 @@
+{
+  "switches": [
+    {
+      "hostname": "DSW1",
+      "ip": "192.168.254.130",
+      "vlans": [
+        {"id": 99, "name": "Management"},
+        {“id”: 101, “name”: “Sales”}
+      ],
+      "interfaces": [
+        {"name": "Po1", "type": "trunk"},
+        {“name”: “FastEthernet4/0”, “type”: “access”, “vlan”: 101}
+      ],
+      “Interface_vlans”: [
+        {“id”: 101, “ip”: “192.168.101.1”, “mask”: “255.255.255.0”}
+      ],
+      "etherchannels": [
+        {"group": 1, "members": ["GigabitEthernet4/14", "GigabitEthernet4/15"], "mode": "active"}
+      ],
+      “ospf”: [
+        {“interface”: “f0/0”, “process”: 1, “area”: 0},
+        {“interface”: “vlan 99”, “process”: 1, “area”: 0},
+        {“interface”: “vlan 101”, “process”: 1, “area”: 0}
+      ]
+    },
+    {
+      "hostname": "DSW2",
+      "ip": "192.168.254.131",
+      "vlans": [
+        {"id": 99, "name": "Management"},
+        {"id": 102, "name": "Inventory"}
+      ],
+      "interface_vlans": [
+        {"id": 102, "ip": "192.168.102.1", "mask": "255.255.255.0"}
+      ],
+      "interfaces": [
+        {“name”: “po1”, “type”: “trunk”},
+        {"name": "FastEthernet4/0", "type": "access", "vlan": 102}
+      ],
+      “etherchannels”: [
+        {“group": 1, "members": ["GigabitEthernet4/14", "GigabitEthernet4/15"], "mode": "active"}
+      ],
+      “ospf”: [
+        {“interface”: “f0/0”, “process”: 1, “area”: 0},
+        {“interface”: “vlan 99”, “process”: 1, “area”: 0},
+        {“interface”: “vlan 102”, “process”: 1, “area”: 0}
+      ]
+    }
+  ]
+}

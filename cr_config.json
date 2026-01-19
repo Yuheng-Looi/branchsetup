@@ -1,0 +1,9 @@
+{
+  "hostname": "CR-BR",
+  "ip": "192.168.254.10",
+  "ospf": {
+    "process_id": 1,
+    "area": 0,
+    "interfaces": ["GigabitEthernet2/0", "FastEthernet0/0"]
+  }
+}

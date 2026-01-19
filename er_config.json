@@ -1,0 +1,15 @@
+{
+  "hostname": "ER-BR",
+  "ip": "192.168.254.9",
+  "nat": {
+    "pat_global_ip": "203.50.0.2",
+    "outside_interface": "GigabitEthernet3/0",
+    "inside_interface": "GigabitEthernet2/0",
+    "source_networks": ["192.168.101.0 0.0.0.255", "192.168.102.0 0.0.0.255"]
+  },
+  "ospf": {
+    "process_id": 1,
+    "area": 0,
+    "interfaces": ["GigabitEthernet2/0", "GigabitEthernet3/0"]
+  }
+}
